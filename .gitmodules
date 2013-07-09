@@ -1,0 +1,3 @@
+[submodule "LogitechInterface"]
+	path = LogitechInterface
+	url = https://github.com/amikhalev/LogitechInterface.git
