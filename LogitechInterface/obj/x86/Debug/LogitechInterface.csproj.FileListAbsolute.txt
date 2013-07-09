@@ -1,0 +1,5 @@
+D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\x86\Debug\LogitechInterface.dll
+D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\x86\Debug\LogitechInterface.pdb
+D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\LogitechInterface.dll
+D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\LogitechInterface.pdb
