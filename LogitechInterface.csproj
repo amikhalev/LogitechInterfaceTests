@@ -72,10 +72,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Release\x86\LogitechLcd.dll" />
-    <None Include="bin\Debug\x64\LogitechLcdx64.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LogitechLcd.dll">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
