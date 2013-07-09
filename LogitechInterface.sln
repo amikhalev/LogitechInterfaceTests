@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogitechInterfaceTest", "LogitechInterfaceTest\LogitechInterfaceTest.csproj", "{76D62CEC-6020-4B75-BE27-084BE68D18BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogitechInterface", "LogitechInterface\LogitechInterface.csproj", "{96C93D66-323E-4183-92C8-46160BF9F840}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogitechInterface", "LogitechInterface.csproj", "{96C93D66-323E-4183-92C8-46160BF9F840}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,0 @@
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\LogitechInterface.dll
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\LogitechInterface.pdb
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\Debug\ResolveAssemblyReference.cache
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\Debug\LogitechInterface.dll
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\obj\Debug\LogitechInterface.pdb
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\x86\LogitechInterface.dll
-D:\Documents\Visual Studio\LogitechInterface\LogitechInterface\bin\Debug\x86\LogitechInterface.pdb
