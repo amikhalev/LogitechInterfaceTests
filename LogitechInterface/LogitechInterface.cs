@@ -15,6 +15,7 @@ namespace LogitechInterface
             #region Supplied Constants
 
             // LCD types
+// ReSharper disable InconsistentNaming
             public const int LOGI_LCD_TYPE_MONO = 0x00000001;
             public const int LOGI_LCD_TYPE_COLOR = 0x00000002;
 
@@ -40,6 +41,7 @@ namespace LogitechInterface
             // Color LCD size
             public const int LOGI_LCD_COLOR_WIDTH = 320;
             public const int LOGI_LCD_COLOR_HEIGHT = 240;
+            // ReSharper restore InconsistentNaming
 
             #endregion
 
@@ -282,9 +284,14 @@ namespace LogitechInterface
         /// <summary>
         ///     Kills the applet and frees the memory used.
         /// </summary>
-        ~LogitechLcd()
+        public void LcdShutdown()
         {
             NativeMethods.LogiLcdShutdown();
+        }
+
+        ~LogitechLcd()
+        {
+            LcdShutdown();
         }
 
         /// <summary>
@@ -304,9 +311,11 @@ namespace LogitechInterface
         }
 
         /// <summary>
-        /// Sets the specified bitmap image as the background on the monochrome lcd
+        ///     Sets the specified bitmap image as the background on the monochrome lcd
         /// </summary>
-        /// <param name="monochromeBitmap">The <see cref="Bitmap"/> image to display on the LCD</param>
+        /// <param name="monochromeBitmap">
+        ///     The <see cref="Bitmap" /> image to display on the LCD
+        /// </param>
         /// <returns>True if successful, false if not</returns>
         public bool LcdMonoSetBackground(Bitmap monochromeBitmap)
         {
@@ -315,7 +324,7 @@ namespace LogitechInterface
             if (monochromeBitmap.Width != MonochromeLcdWidth || monochromeBitmap.Height != MonochromeLcdHeight)
                 throw new ArgumentException("Invalid bitmap size", "monochromeBitmap");
             //TODO fix this
-            return LcdMonoSetBackground((byte[])new ImageConverter().ConvertTo(monochromeBitmap, typeof(byte[])));
+            return LcdMonoSetBackground((byte[]) new ImageConverter().ConvertTo(monochromeBitmap, typeof (byte[])));
         }
 
         /// <summary>
@@ -351,14 +360,17 @@ namespace LogitechInterface
         public bool LcdColorSetBackground(byte[] colorBitmap)
         {
             if (colorBitmap.Length != ColorLcdWidth*ColorLcdHeight*4)
-                throw new ArgumentException("Array size invalid. Should be 307,200 , but is " + colorBitmap.Length, "colorBitmap");
+                throw new ArgumentException("Array size invalid. Should be 307,200 , but is " + colorBitmap.Length,
+                                            "colorBitmap");
             return NativeMethods.LogiLcdColorSetBackground(colorBitmap);
         }
 
         /// <summary>
-        /// Sets the specified bitmap image as the background on the color LCd
+        ///     Sets the specified bitmap image as the background on the color LCd
         /// </summary>
-        /// <param name="colorBitmap">The <see cref="Bitmap"/> to display</param>
+        /// <param name="colorBitmap">
+        ///     The <see cref="Bitmap" /> to display
+        /// </param>
         /// <returns>True if successful, false if not</returns>
         public bool LcdColorSetBackground(Bitmap colorBitmap)
         {
@@ -366,16 +378,16 @@ namespace LogitechInterface
                 throw new ArgumentNullException("colorBitmap");
             if (colorBitmap.Width != ColorLcdWidth || colorBitmap.Height != ColorLcdHeight)
                 throw new ArgumentException("Invalid bitmap size", "colorBitmap");
-            var byteMap = new byte[ColorLcdWidth * ColorLcdHeight * 4];
+            var byteMap = new byte[ColorLcdWidth*ColorLcdHeight*4];
             for (int x = 0; x < ColorLcdWidth; x++)
             {
                 for (int y = 0; y < ColorLcdHeight; y++)
                 {
                     Color color = colorBitmap.GetPixel(x, y);
-                    byteMap[(x * ColorLcdHeight + y)*4] = color.B;
-                    byteMap[(x * ColorLcdHeight + y)*4 + 1] = color.G;
-                    byteMap[(x * ColorLcdHeight + y)*4 + 2] = color.R;
-                    byteMap[(x * ColorLcdHeight + y)*4 + 3] = color.A;
+                    byteMap[(x*ColorLcdHeight + y)*4] = color.B;
+                    byteMap[(x*ColorLcdHeight + y)*4 + 1] = color.G;
+                    byteMap[(x*ColorLcdHeight + y)*4 + 2] = color.R;
+                    byteMap[(x*ColorLcdHeight + y)*4 + 3] = color.A;
                 }
             }
             return LcdColorSetBackground(byteMap);
@@ -401,7 +413,7 @@ namespace LogitechInterface
         }
 
         /// <summary>
-        /// Sets the specified text in the first line on the color LCD device. The font size will be larger than the one used on the other lines.
+        ///     Sets the specified text in the first line on the color LCD device. The font size will be larger than the one used on the other lines.
         /// </summary>
         /// <param name="text">The text to be displayed</param>
         /// <param name="color">The color of the text</param>
@@ -436,7 +448,7 @@ namespace LogitechInterface
         }
 
         /// <summary>
-        /// Sets the specified text on the requested line on the color LCD device.
+        ///     Sets the specified text on the requested line on the color LCD device.
         /// </summary>
         /// <param name="lineNumber">The line on the screen that the text will appear on. There are 8 lines, so this is 0-7</param>
         /// <param name="text">The text to be displayed</param>
